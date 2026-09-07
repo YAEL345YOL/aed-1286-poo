@@ -53,8 +53,5 @@ public class Principal {
         
         JOptionPane.showMessageDialog(null, "El promedio vale : " + promedio / 3.0);
         
-//        String sDom = JOptionPane.showInputDialog("Teclado domicilio...");
-//        t0.setDomilicio(sDom);
-        
     }
 }
