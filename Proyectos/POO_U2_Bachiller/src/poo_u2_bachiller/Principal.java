@@ -84,7 +84,7 @@ public class Principal {
         // Resultados
 
         System.out.println("Exelentes: " + exelente);
-        System.out.println("Bueno: " + bueno);
+        System.out.println("Buenos: " + bueno);
         System.out.println("Suficientes: " + suficiente);
         System.out.println("Insuficientes: " + insuficiente);
         System.out.println("Promedio: " + (suma / 4.0));
