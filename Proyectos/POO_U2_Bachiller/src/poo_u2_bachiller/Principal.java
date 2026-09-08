@@ -28,15 +28,66 @@ public class Principal {
         b4.setCalif(9.6);
         b4.calcCualificacion();
         
+        // Suma
         
-        // Calcular y mostrar en pantalla el promediode todos
+        double suma = 0; 
         
-        // Cuantos son exelentes
-        // Cuantos son suficientes
-        // Nombre del que tiene la mejor calificacion 
+        suma += b1.getCalif();
+        suma += b2.getCalif();
+        suma += b3.getCalif();
+        suma += b4.getCalif();
         
-        int exelentes = 0, suficientes = 0, mejorCalif = 0;
+        // Obtencion de la cantidad de exelentes, buenos, suficientes y insuficientes
         
+        int insuficiente = 0, suficiente = 0, bueno = 0, exelente = 0;
+                
+        if(b1.getCualificacion().equals("Exelente")) exelente += 1;
+        else if(b1.getCualificacion().equals("Bueno")) bueno += 1;
+        else if(b1.getCualificacion().equals("Suficiente")) suficiente += 1;
+        else insuficiente += 1;
         
+        if(b2.getCualificacion().equals("Exelente")) exelente += 1;
+        else if(b2.getCualificacion().equals("Bueno")) bueno += 1;
+        else if(b2.getCualificacion().equals("Suficiente")) suficiente += 1;
+        else insuficiente += 1;
+        
+        if(b3.getCualificacion().equals("Exelente")) exelente += 1;
+        else if(b3.getCualificacion().equals("Bueno")) bueno += 1;
+        else if(b3.getCualificacion().equals("Suficiente")) suficiente += 1;
+        else insuficiente += 1;
+        
+        if(b4.getCualificacion().equals("Exelente")) exelente += 1;
+        else if(b4.getCualificacion().equals("Bueno")) bueno += 1;
+        else if(b4.getCualificacion().equals("Suficiente")) suficiente += 1;
+        else insuficiente += 1;
+        
+        // Nombre de la persona con mayor promedio
+        
+        double mayorCalif = b1.getCalif();
+        String nombreMayorCalif = b1.getNombre();
+        
+        if(b2.getCalif() > mayorCalif){
+            mayorCalif = b2.getCalif();
+            nombreMayorCalif = b2.getNombre();
+        }
+        
+        if(b3.getCalif() > mayorCalif){
+            mayorCalif = b3.getCalif();
+            nombreMayorCalif = b3.getNombre();
+        }
+        
+        if(b4.getCalif() > mayorCalif){
+            mayorCalif = b4.getCalif();
+            nombreMayorCalif = b4.getNombre();
+        }
+        
+        // Resultados
+
+        System.out.println("Exelentes: " + exelente);
+        System.out.println("Bueno: " + bueno);
+        System.out.println("Suficientes: " + suficiente);
+        System.out.println("Insuficientes: " + insuficiente);
+        System.out.println("Promedio: " + (suma / 4.0));
+        System.out.println("Persona mayor promedio: " + nombreMayorCalif);
     }
 }
