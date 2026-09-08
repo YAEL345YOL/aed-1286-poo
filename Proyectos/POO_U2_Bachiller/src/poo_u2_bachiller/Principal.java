@@ -88,6 +88,7 @@ public class Principal {
         System.out.println("Suficientes: " + suficiente);
         System.out.println("Insuficientes: " + insuficiente);
         System.out.println("Promedio: " + (suma / 4.0));
-        System.out.println("Persona mayor promedio: " + nombreMayorCalif);
+        System.out.println("Persona mayor calificacion: " + nombreMayorCalif);
+        System.out.println("Mayor calificacion: " + mayorCalif);
     }
 }
