@@ -1,8 +1,10 @@
 package poo_u2_bachiller;
 import java.util.*;
+import javax.swing.JOptionPane;
 
 public class Principal {
     public static void main(String[] args) {
+        /*
         Bachiller b1 = new Bachiller();
         Bachiller b2 = new Bachiller();
         Bachiller b3 = new Bachiller();
@@ -90,5 +92,63 @@ public class Principal {
         System.out.println("Promedio: " + (suma / 4.0));
         System.out.println("Persona mayor calificacion: " + nombreMayorCalif);
         System.out.println("Mayor calificacion: " + mayorCalif);
+        */
+         
+        // ============ LLENAR UN ARREGLO CON 8 BACHILLERES ============ //
+        
+        final int numeroEstudiantes = 4;
+        
+        Bachiller a[] = new Bachiller[numeroEstudiantes];
+        
+        for(int i = 0; i < a.length; ++i){
+            Bachiller u = new Bachiller();
+            
+            String nombre = JOptionPane.showInputDialog("Introduce un nombre " + (i + 1));
+            String carrera = JOptionPane.showInputDialog("Introduce una carrera " + (i + 1));
+            String calif = JOptionPane.showInputDialog("Introduce calificacion " + (i + 1));
+            
+            u.setNombre(nombre);
+            u.setCarrera(carrera);
+            u.setCalif(Double.parseDouble(calif));
+            u.calcCualificacion();
+            
+            a[i] = u;
+            
+            JOptionPane.showMessageDialog(null,
+                "Nombre: " + a[i].getNombre()   + '\n' +
+                "Carrera: " + a[i].getCarrera() + '\n' +
+                "Calif: " + a[i].getCalif()     + '\n' +
+                "Cualificacion: " + a[i].getCualificacion() 
+            );
+        }
+        
+        int insuficiente = 0, suficiente = 0, bueno = 0, exelente = 0;
+        double suma = 0, mayorCalif = a[0].getCalif();
+        String nombreMayorCalif = a[0].getNombre();
+        
+        for(int i = 0; i < a.length; ++i){
+            if(a[i].getCalif() > mayorCalif){
+                mayorCalif = a[i].getCalif();
+                nombreMayorCalif = a[i].getNombre();
+            }
+
+            if(a[i].getCualificacion().equals("Exelente")) exelente += 1;
+            else if(a[i].getCualificacion().equals("Bueno")) bueno += 1;
+            else if(a[i].getCualificacion().equals("Suficiente")) suficiente += 1;
+            else insuficiente += 1;
+            
+            suma += a[i].getCalif();
+        }
+        
+        JOptionPane.showMessageDialog(null,
+            "Exelentes: " + exelente                          + '\n' +
+            "Buenos: " + bueno                                + '\n' +
+            "Suficientes: " + suficiente                      + '\n' +
+            "Insuficientes: " + insuficiente                  + '\n' +
+            "Promedio: " + (suma / (double) a.length)                + '\n' +
+            "Persona mayor calificacion: " + nombreMayorCalif + '\n' +
+            "Mayor calificacion: " + mayorCalif 
+        );
+        
     }
 }
