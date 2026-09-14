@@ -145,7 +145,7 @@ public class Principal {
             "Buenos: " + bueno                                + '\n' +
             "Suficientes: " + suficiente                      + '\n' +
             "Insuficientes: " + insuficiente                  + '\n' +
-            "Promedio: " + (suma / (double) a.length)                + '\n' +
+            "Promedio: " + (suma / (double) a.length)         + '\n' +
             "Persona mayor calificacion: " + nombreMayorCalif + '\n' +
             "Mayor calificacion: " + mayorCalif 
         );
