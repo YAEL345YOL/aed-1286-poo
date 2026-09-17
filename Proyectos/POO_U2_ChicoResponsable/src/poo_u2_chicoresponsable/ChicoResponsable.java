@@ -59,6 +59,9 @@ public class ChicoResponsable {
         
         double consulta = chr.getMonto("gym");
         
-        JOptionPane.showMessageDialog(null, "Valor del concepto: " + consulta);
+        JOptionPane.showMessageDialog(null, "Promedio: " + chr.promedio());
+        JOptionPane.showMessageDialog(null, "Concepto mas alto: " + chr.conceptoAlto());
+        JOptionPane.showMessageDialog(null, "Concepto mas bajo: " + chr.conceptoBajo());
+        JOptionPane.showMessageDialog(null, "Valor del concepto gym: " + consulta);
     }
 }
