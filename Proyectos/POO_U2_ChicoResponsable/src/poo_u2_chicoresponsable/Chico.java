@@ -47,7 +47,6 @@ public class Chico {
     }
     
     public double promedio(){
-        if(cima == 0) return -1; 
         double suma = 0;
         for(int i = 0; i < cima; ++i)
             suma += gastos[i];
@@ -55,8 +54,6 @@ public class Chico {
     }
     
     public String conceptoAlto(){
-        if(cima == 0) return null;
-        
         String nombreConceptoAlto = conceptos[0];
         double maxConcepto = gastos[0];
         
@@ -70,9 +67,7 @@ public class Chico {
         return nombreConceptoAlto;
     }
     
-     public String conceptoBajo(){
-        if(cima == 0) return null;
-         
+    public String conceptoBajo(){
         String nombreConceptoBajo = conceptos[0];
         double minConcepto = gastos[0];
         
@@ -85,4 +80,15 @@ public class Chico {
         
         return nombreConceptoBajo;
     }
+    
+    public double getMonto(String concepto){
+        for(int i = 0; i < cima; ++i){
+            if(conceptos[i].equals(concepto)){
+                return gastos[i];
+            }
+        }
+        
+        return -1;
+    }
+         
 }
